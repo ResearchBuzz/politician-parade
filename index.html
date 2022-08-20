@@ -192,6 +192,15 @@
 
 function Parade(){
 
+	   var apikey = document.querySelector(".apikey").value
+
+	
+	 if (apikey == null || apikey == "") {
+         alert("Please enter a ProPublica API key. This tool won't work without one.");
+         return false;
+      }
+
+	
     // Getting values from form 
 
     var searchq = document.querySelector(".searchq").value
@@ -199,8 +208,7 @@ function Parade(){
     console.log(searchq)
     var state = document.querySelector(".state").value
     console.log(state)
-    var apikey = document.querySelector(".apikey").value
-
+ 
     var api_url = "https://api.propublica.org/congress/v1/members/house/"+state+"/current.json"
      
     var search_url = "https://www.google.com/search?tbm=nws&q="+searchq+"+"
